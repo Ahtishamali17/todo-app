@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do List App</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- ============================================================
+       BACKGROUND DECORATIVE BLOBS
+       These are pure CSS circles that give a colorful background
+       ============================================================ -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <!-- ============================================================
+       MAIN APP CONTAINER
+       ============================================================ -->
+  <div class="app-container">
+
+    <!-- APP HEADER -->
+    <div class="app-header">
+      <h1 class="app-title">
+        <i class="bi bi-check2-square"></i> My Tasks
+      </h1>
+      <!-- Live task counter — updated by JavaScript -->
+      <div class="task-stats">
+        <span id="totalCount">0</span> total &nbsp;·&nbsp;
+        <span id="activeCount">0</span> remaining
+      </div>
+    </div>
+
+    <!-- ============================================================
+         ADD TASK INPUT AREA
+         ============================================================ -->
+    <div class="add-task-area">
+      <div class="input-row">
+        <input
+          type="text"
+          id="taskInput"
+          class="task-input"
+          placeholder="What needs to be done?"
+          maxlength="120"
+          autocomplete="off"
+        />
+        <!-- Priority dropdown -->
+        <select id="prioritySelect" class="priority-select">
+          <option value="low">🟢 Low</option>
+          <option value="medium" selected>🟡 Medium</option>
+          <option value="high">🔴 High</option>
+        </select>
+        <button id="addBtn" class="add-btn" title="Add Task">
+          <i class="bi bi-plus-lg"></i> Add
+        </button>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         FILTER TABS — All / Active / Completed
+         ============================================================ -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">
+        All <span class="filter-count" id="allCount">0</span>
+      </button>
+      <button class="filter-btn" data-filter="active">
+        Active <span class="filter-count" id="activeFilterCount">0</span>
+      </button>
+      <button class="filter-btn" data-filter="completed">
+        Done <span class="filter-count" id="completedCount">0</span>
+      </button>
+      <!-- Clear completed button on the right -->
+      <button id="clearCompletedBtn" class="clear-btn" title="Clear all completed tasks">
+        <i class="bi bi-trash3"></i> Clear done
+      </button>
+    </div>
+
+    <!-- ============================================================
+         TASK LIST — Tasks are injected here by JavaScript
+         ============================================================ -->
+    <ul id="taskList" class="task-list">
+      <!-- Tasks will be rendered here dynamically -->
+    </ul>
+
+    <!-- Empty state — shown when no tasks match the filter -->
+    <div id="emptyState" class="empty-state">
+      <i class="bi bi-clipboard-check"></i>
+      <p id="emptyText">No tasks yet. Add one above!</p>
+    </div>
+
+    <!-- ============================================================
+         EDIT MODAL — appears when user clicks edit on a task
+         ============================================================ -->
+    <div id="editModal" class="modal-overlay hidden">
+      <div class="modal-box">
+        <h3 class="modal-title">
+          <i class="bi bi-pencil-square"></i> Edit Task
+        </h3>
+        <input
+          type="text"
+          id="editInput"
+          class="task-input"
+          placeholder="Update your task..."
+          maxlength="120"
+        />
+        <select id="editPriority" class="priority-select mt-2 w-full">
+          <option value="low">🟢 Low</option>
+          <option value="medium">🟡 Medium</option>
+          <option value="high">🔴 High</option>
+        </select>
+        <div class="modal-actions">
+          <button id="saveEditBtn" class="add-btn">
+            <i class="bi bi-check2"></i> Save
+          </button>
+          <button id="cancelEditBtn" class="cancel-btn">
+            <i class="bi bi-x-lg"></i> Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- APP FOOTER -->
+    <div class="app-footer">
+      Built with ❤️ using HTML, CSS &amp; JavaScript &nbsp;|&nbsp; InternSpark Project 2
+    </div>
+
+  </div><!-- end .app-container -->
+
+  <!-- JavaScript file -->
+  <script src="app.js"></script>
+
+</body>
+</html>
