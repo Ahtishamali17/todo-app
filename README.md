@@ -12,8 +12,8 @@
 
 A fully featured, interactive To-Do List application built with pure Vanilla JavaScript. Tasks are stored in the browser's Local Storage so they persist after page refresh. Features a modern glassmorphism UI with smooth animations.
 
-**Live Demo:** [https://YOUR_USERNAME.github.io/todo-app](https://ahtishamali17.github.io/todo-app)
-**GitHub Repo:** [https://github.com/YOUR_USERNAME/todo-app](https://github.com/ahtishamali17/todo-app)
+**Live Demo:** [https://ahtishamali17.github.io/todo-app](https://ahtishamali17.github.io/todo-app)
+**GitHub Repo:** [https://github.com/ahtishamali17/todo-app](https://github.com/ahtishamali17/todo-app)
 
 ---
 
@@ -159,11 +159,7 @@ git push -u origin main
 
 ---
 
-## 📸 Screenshots
 
-*(Add your app screenshots here)*
-
----
 
 ## 📋 Internship Submission Checklist
 
